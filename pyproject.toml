@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pdf2md"
+version = "0.1.0"
+description = "PDF를 Markdown으로 변환하여 LLM 토큰 사용량을 줄이는 경량 래퍼"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "pdf2md user"}
+]
+dependencies = [
+    "markitdown[pdf]>=0.1.0",
+]
+
+[project.scripts]
+pdf2md = "pdf2md.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pdf2md*"]
